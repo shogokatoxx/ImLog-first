@@ -283,3 +283,65 @@ button:active{
   font-size:15px;
   width:300px;
 }
+
+@media screen and (max-width:600px){
+  body{
+    font-size:3.5vw;
+  }
+  h1{
+    font-size:7.2vw;
+  }
+  h2{
+    font-size:6vw;
+  }
+  header{
+    width:auto;
+    margin:0 5%;
+  }
+  .logo{
+    float:none;
+    margin-top:60px;
+    text-align:center;
+  }
+  .global-nav{
+    float:none;
+    margin-top:40px;
+    text-align:center;
+  }
+  .global-nav li{
+    display:inline;
+    float:none;
+    margin:0 8px;
+  }
+  #base{
+    margin-top:100px;
+    padding:35px 0 0;
+  }
+  .contents{
+    width:100%;
+  }
+  .new-title{
+    float:none;
+    width:auto;
+    margin:0 5%;
+  }
+  .main{
+    float:none;
+  }
+  h2 img{
+    max-width:100%;
+  }
+  .sidebar{
+    width:auto;
+    float:none;
+    margin:0;
+    padding:30px 5px;
+    background-color:#f7f6f4;
+  }
+  #top h1{
+    font-size:7.2vw;
+  }
+  #top p{
+    font-size:3.5vw;
+  }
+}

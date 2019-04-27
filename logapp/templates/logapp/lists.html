@@ -17,7 +17,7 @@
       <div class="nav">
         <ul class="global-nav">
           {% if  user.is_authenticated %}
-            <li class="login-txt">{{ user.get_username }}がログインしています</li>
+            <li class="login-txt">{{ user.get_username }}がログイン中</li>
             <li><a href="{% url 'logout' %}">ログアウト</a></li>
           {% else %}
             <li><a href="{% url 'login' %}">ログイン</a></li>
