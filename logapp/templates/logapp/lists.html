@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>「IpLog」タイトル一覧</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body id="lists">
+    <header>
+      <div class="logo">
+        <a href="{% url 'logapp:top_page' %}"><img src="{% static 'image/logo.png' %}" alt="ImLog"></a>
+      </div>
+      <div class="nav">
+        <ul class="global-nav">
+          {% if  user.is_authenticated %}
+            <li class="login-txt">{{ user.get_username }}がログインしています</li>
+            <li><a href="{% url 'logout' %}">ログアウト</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">ログイン</a></li>
+            <li><a href="{% url 'accounts:signup' %}">新規登録</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </header>
+    <main id="base">
+      <div class="contents">
+        <div class="new-title">
+          <h1>タイトル一覧</h1>
+          <p>「ImLog」投稿一覧です。</p>
+          <section class="profile clearfix">
+            <div class="main">
+              <div class="lists-text">
+                <h2 class="icon" id="newtitle">最新のタイトル</h2>
+                {% for new in newtitle %}
+                  {% if not forloop.counter > 5 %}
+                    <p><a href="{% url 'logapp:log_detail' pk=new.pk %}">{{ new.title }}</a> 投稿日：{{ new.created_date }}</p>
+                  {% else %}
+                      <p></p>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="ranking" id="ranking">
+                <h2 class="icon">人気のタイトル</h2>
+                {% for rank in ranking %}
+                  {% if not forloop.counter > 3 %}
+                    <p>{{ forloop.counter }}位:<a href="{% url 'logapp:log_detail' pk=rank.pk %}">{{ rank.title }}</a> いいね：{{ rank.votes }}</p>
+                  {% else %}
+                    <p></p>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="lists">
+                <h2 class="icon" id="hoge">タイトル一覧</h2>
+                {% for log in logs %}
+                  <p><a href="{% url 'logapp:log_detail' pk=log.pk %}">{{ log.title }}</a></p>
+                {% endfor %}
+              </div>
+            </div>
+              <aside class="sidebar">
+                <section>
+                  <h2>タイトルメニュー</h2>
+                  <li><a href="#newtitle">最新タイトル</a></li>
+                  <li><a href="#ranking">人気タイトル</a></li>
+                  <li><a href="#hoge">タイトル一覧</a></li>
+                </section>
+                <section>
+                  {% if user.is_authenticated %}
+                    <h2>ユーザーメニュー</h2>
+                    <li><a href="{% url 'logapp:user_title' %}">ユーザーの投稿</a></li>
+                    <li><a href="{% url 'logapp:new_title' %}">新規投稿</a></li>
+                  {% endif %}
+                </section>
+              </aside>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <small>(c)2019 shogo kato</small>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body id="loginout">
+<header>
+  <div class="logo">
+    <a href="{% url 'logapp:top_page' %}"><img src="{% static 'image/logo.png' %}" alt="ImLog"></a>
+  </div>
+    <div class="nav">
+      <ul class="global-nav">
+        {% if  user.is_authenticated %}
+          <li class="login-txt">{{ user.get_username }}がログインしています</li>
+          <li><a href="{% url 'logout' %}">ログアウト</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">ログイン</a></li>
+          <li><a href="{% url 'accounts:signup' %}">新規登録</a></li>
+        {% endif %}
+      </ul>
+    </div>
+</header>
+<main id="base">
+  <div class="contents">
+      {% block content %}{% endblock %}
+  </div>
+</main>
+<footer>
+  <small>(c)2019 shogo kato</small>
+</footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>「IpLog」日常の「これは大事なこと」を共有</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body id ="userlists">
+    <header>
+      <div class="logo">
+        <a href="{% url 'logapp:top_page' %}"><img src="{% static 'image/logo.png' %}" alt="ImLog"></a>
+      </div>
+      <div class="nav">
+        <ul class="global-nav">
+        <li class="login-txt">{{ user.get_username }}がログインしています</li>
+        <li><a href="{% url 'logout' %}">ログアウト</a></li>
+        </ul>
+      </div>
+    </header>
+    <main id="base">
+      <div class="contents">
+        <div class="new-title">
+        <h1>ユーザータイトル一覧</h1>
+        <p>「ImLog」投稿一覧です。</p>
+        <section class="profile clearfix">
+          <div class="main">
+            <div class="lists">
+              <h2 class="icon">{{ user.get_username }}のタイトル一覧</h2>
+              {% for log in logs %}
+                <p><a href="{% url 'logapp:user_detail' pk=log.pk %}">{{ log.title }}</a></p>
+              {% endfor %}
+            </div>
+          </div>
+            <aside class="sidebar">
+              <section>
+                <h2>タイトルメニュー</h2>
+                <li><a href="{% url 'logapp:lists' %}#newtitle">最新タイトル</a></li>
+                <li><a href="{% url 'logapp:lists' %}#ranking">人気タイトル</a></li>
+                <li><a href="{% url 'logapp:lists' %}#hoge">タイトル一覧</a></li>
+              </section>
+              <section>
+                <h2>ユーザーメニュー</h2>
+                <li><a href="{% url 'logapp:user_title' %}">ユーザーの投稿</a></li>
+                <li><a href="{% url 'logapp:new_title' %}">新規投稿</a></li>
+              </section>
+            </aside>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <small>(c)2019 shogo kato</small>
+  </footer>
+</body>
+</html>

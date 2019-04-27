@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>「ImLog」トップベージ</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body id="top">
+    <header>
+      <div class="logo">
+        <a href="{% url 'logapp:top_page' %}"><img src="{% static 'image/logo.png' %}" alt="ImLog"></a>
+      </div>
+      <div class="nav">
+        <ul class="global-nav">
+          {% if user.is_authenticated %}
+            <li class="login-txt">{{ user.get_username }}がログインしています</li>
+            <li><a href="{% url 'logout' %}">ログアウト</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">ログイン</a></li>
+            <li><a href="{% url 'accounts:signup' %}">新規登録</a></li>
+          {% endif %}
+        </ul>
+      </div>
+    </header>
+    <main id="base">
+      <div class="contents">
+        <h1>「ImLog」で大事なことを共有しよう</h1>
+        <p>このWebサイトは、駆け出しエンジニアである加藤彰悟が、日常の「これは大事なこと」を共有することをコンセプトを
+          テーマに<br>手がけたログアプリです。皆さんの「これは大事なこと」を共有してたくさんの考えを広めていきましょう。</p>
+        <p class="btn"><a href="{% url 'logapp:lists' %}">ImLogを始める</a></p>
+      </div>
+    </main>
+    <footer>
+      <small>(c)2019 shogo kato</small>
+    </footer>
+  </body>
+</html>

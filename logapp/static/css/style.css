@@ -1,0 +1,285 @@
+body{
+  background:#cccccc;
+  margin:0;
+  padding:0;
+  color:#333333;
+  font-size:15px;
+  line-height:2;
+}
+p,h1,h2,h3,h4,h5,h6{
+  margin-top:0;
+}
+img{
+  vertical-align:bottom;
+}
+ul{
+  margin:0;
+  padding:0;
+}
+a{
+  color:#3583aa;
+  text-decoration:none;
+}
+a:visited{
+  color:#788d98;
+}
+a:hover{
+  text-decoration:underline;
+}
+header{
+  width:960px;
+  height:100px;
+  margin:0 auto;
+}
+.logo{
+  float:left;
+  margin-top:50px;
+}
+.global-nav{
+  float:right;
+  margin-top:60px;
+}
+.global-nav li{
+  float:left;
+  margin:0 20px;
+  font-size:20px;
+  list-style:none;
+  font-family:serif;
+}
+.global-nav li a{
+  color:#ffffff;
+}
+.global-nav li a:hover{
+  border-bottom:2px solid #ffffff;
+  padding-bottom:3px;
+  text-decoration:none;
+}
+#base{
+  clear:both;
+}
+.contents{
+  width:960px;
+  margin:0 auto;
+}
+footer{
+  text-align:center;
+  color:#ffffff;
+  padding:20px 0;
+}
+.footer small{
+  font-size:12px;
+}
+#top h1{
+  font-size:100px;
+  line-height:1;
+  color:#ffffff;
+  font-family:serif;
+  margin-bottom:50px;
+  border:none;
+}
+#top .contents{
+  margin-top:150px;
+}
+#top p {
+  font-size:16px;
+  color:#ffffff;
+}
+.btn a{
+  background-color:#009cd3;
+  color:#ffffff;
+  font-size:20px;
+  font-family:serif;
+  width:185px;
+  display:block;
+  text-align:center;
+  line-height:50px;
+  margin-top:20px;
+  border-radius:5px;
+  border:3px solid #009cd3;
+}
+.btn a:hover{
+  text-decoration:none;
+  background-color:#ffffff;
+  color:#009cd3;
+}
+#top footer{
+  width:960px;
+  margin:150px auto 0 auto;
+  text-align:left;
+  background-color:transparent;
+}
+#top{
+  background-image:url(../image/top_img2.jpg);
+  background-repeat;
+  background-position:center center;
+  background-attachment:fixed;
+  background-size:cover;
+}
+/* ログイン用 */
+.login-btn{
+  font-size:100%;
+  border:0;
+  padding:5px;
+  border-radius:5px;
+  font-family:serif;
+  background-color:#009cd3;
+  cursor:pointer;
+  color:#ffffff;
+  border:3px solid #009cd3;
+}
+.login-btn:hover{
+  background-color:#ffffff;
+  color:#009cd3;
+}
+table{
+  margin:10px;
+}
+input{
+  font-size:18px;
+}
+tr{
+  padding:10px;
+  height:70px;
+}
+
+/* タイトル一覧 */
+#lists{
+  background-image:url(../image/lists.jpg);
+  background-repeat;
+  background-position:center center top;
+  background-attachment:fixed;
+  background-size:100% auto;
+}
+#base{
+  clear:both;
+  background-color:#ffffff;
+  margin-top:220px;
+  padding:35px 0;
+}
+.new-title{
+  width:960px;
+  margin:0 auto;
+}
+h1{
+  font-family:serif;
+  font-size:36px;
+  border-bottom:1px solid #cccccc;
+}
+h2{
+  font-family:serif;
+  font-size:24px;
+}
+.icon:before{
+  content:"";
+  padding-right:10px;
+  border-left:7px solid #9cb4a4;
+}
+.clearfix:after{
+  content:"";
+  display:block;
+  clear:both;
+}
+footer{
+  text-align:center;
+  color:#ffffff;
+  padding:20px 0;
+  background-color:#767671;
+}
+.login-txt{
+  color:#ff0000;
+}
+
+/* top修正 */
+#top #base{
+  background-color:transparent;
+  margin-top:0;
+  padding:0;
+}
+
+
+/* detailページ */
+#detail{
+  background-image:url(../image/detail.jpg);
+  background-repeat;
+  background-position:center center top;
+  background-attachment:fixed;
+  background-size:100% auto;
+}
+.main{
+  width:700px;
+  margin:0 10px;
+  float:left;
+}
+.sidebar{
+  width:200px;
+  margin: 0 10px 0 30px;
+  float:right;
+  font-family:serif;
+}
+.sidebar h2{
+  margin-bottom:10px;
+}
+.sidebar ul{
+  font-size:16px;
+  margin-left:20px
+}
+.sidebar ul a{
+  color:#333333;
+}
+
+/* ユーザータイトル一覧 */
+#userlists{
+  background-image:url(../image/user.jpg);
+  background-repeat;
+  background-position:center center top;
+  background-attachment:fixed;
+  background-size:100% auto;
+}
+
+/* ログインログアウト */
+#loginout{
+  background-image:url(../image/loginout.jpg);
+  background-repeat;
+  background-position:center center top;
+  background-attachment:fixed;
+  background-size:100% auto;
+}
+
+/* 新規登録 */
+button{
+  position:relative;
+  display:inline-block;
+  padding:0.25em 0.5em;
+  text-decoration:none;
+  color:#fff;
+  background:#03a9f4;
+  border:solid 1px #0f9ada;
+  border-radius:4px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.2);
+  text-shadow:0 1px 0 rgba(0,0,0,0.2);
+  font-size:15px;
+  cursor:pointer;
+}
+button:active{
+  border:solid 1px #03a9f4;
+  box-shadow:none;
+  text-shadow:none;
+}
+
+/* 新規投稿 */
+#edit{
+  background-image:url(../image/edit.jpg);
+  background-repeat;
+  background-position:center center top;
+  background-attachment:fixed;
+  background-size:100% auto;
+}
+#edit textarea {
+  width:600px;
+  height:500px;
+  font-size:15px;
+}
+#edit input{
+  font-size:15px;
+  width:300px;
+}
